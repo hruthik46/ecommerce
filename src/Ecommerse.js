@@ -7,6 +7,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import axios from "axios";
 
 // this line is just added so that i can push something into the repo and check if the jenkins build is getting triggered.
+// first trigger failed so trying again by adding a new line.
 
 export default function Ecommerse(){
     const navigate = useNavigate();
