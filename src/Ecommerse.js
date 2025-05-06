@@ -6,6 +6,8 @@ import Navbar from "./Navbar";
 import { FaShoppingCart } from "react-icons/fa";
 import axios from "axios";
 
+// this line is just added so that i can push something into the repo and check if the jenkins build is getting triggered.
+
 export default function Ecommerse(){
     const navigate = useNavigate();
     //const [loading, setLoading] = useState(true);
