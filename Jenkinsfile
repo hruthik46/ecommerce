@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                git "https://github.com/hruthik46/ecommerce.git"
+                git branch: 'main', url: 'https://github.com/hruthik46/ecommerce.git'
                 sh "docker build -t ecommerse-frontend ."
                 sh "docker tag ecommerse-frontend:latest 749724771232.dkr.ecr.us-east-1.amazonaws.com/ecommerse-frontend:latest"
             }
