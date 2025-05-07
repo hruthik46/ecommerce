@@ -9,6 +9,12 @@ import axios from "axios";
 // this line is just added so that i can push something into the repo and check if the jenkins build is getting triggered.
 // first trigger failed so trying again by adding a new line.
 // trying another time for jenkins trigger attempt 3
+// attempt 4
+// forgot to start the docker in my machine attempt 4
+// attempt 5
+// trying again
+
+// i dont know i am trying again
 
 export default function Ecommerse(){
     const navigate = useNavigate();
