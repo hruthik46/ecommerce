@@ -149,7 +149,13 @@ export default function Product() {
                                     +
                                 </button>
                                 </div>
-                                <button className="addToCart">{ cartStatus ? "ADDED TO CART" : "ADD TO CART" }</button>
+                                <button className="addToCart"
+                                onClick={()=>{
+                                    if(!cartStatus){
+                                        updateQuantity(product.prodId, 1);
+                                    }
+                                }}
+                                >{ cartStatus ? "ADDED TO CART" : "ADD TO CART" }</button>
                     </div>
                 </div>
             </div>
