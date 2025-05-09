@@ -153,6 +153,7 @@ export default function Product() {
                                 onClick={()=>{
                                     // anyways this button click will only be active when this product is not in cart, so as soon as we hit the button we update the quantity to 1.
                                     if(!cartStatus){
+                                        console.log("Clicked Added To Cart: "+ cartStatus);
                                         updateQuantity(product.prodId, 1);
                                     }
                                 }}
