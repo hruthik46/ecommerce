@@ -74,6 +74,15 @@ export default function Product() {
          })
     }
 
+    async function saveProduct(){
+        document.cookie = `Cart_${prodId}=${1}; path=/; domain=.hruthik-ecommerse-store.com; Secure; SameSite=None`;
+        document.cookie = `Variant_${prodId}=${activeId}; path=/; domain=.hruthik-ecommerse-store.com; Secure; SameSite=None`;
+        setCookie(`${document.cookie}`);
+        setCartMap((prevCartMap=>{
+            return { ...prevCartMap, [prodId]: 1};
+        }))
+    }
+
     async function saveItem(){
         const cartResponse = await axios.post(`https://users.hruthik-ecommerse-store.com/user/save`,
             { 
@@ -162,7 +171,8 @@ export default function Product() {
                                 onClick={()=>{
                                     // anyways this button click will only be active when this product is not in cart, so as soon as we hit the button we update the quantity to 1.
                                     if(!cartStatus){
-                                        saveItem();
+                                        //saveItem();
+                                        saveProduct();
                                         //updateQuantity(product.prodId, 1);
                                     }
                                 }}
