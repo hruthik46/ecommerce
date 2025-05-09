@@ -73,6 +73,15 @@ export default function Product() {
             return { ...prevCartMap, [prodId]: quantity };
          })
     }
+
+    async function saveItem(){
+        const cartResponse = await axios.post(`https://users.hruthik-ecommerse-store.com/user/save`,
+            { 
+               "prodId": prodId,
+               "variantId": activeId,
+               }, {withCredentials: true});
+        console.log("Clicked Added To Cart: "+ cartStatus);
+    }
     
     useEffect(() => {
         getProduct();
@@ -153,8 +162,8 @@ export default function Product() {
                                 onClick={()=>{
                                     // anyways this button click will only be active when this product is not in cart, so as soon as we hit the button we update the quantity to 1.
                                     if(!cartStatus){
-                                        console.log("Clicked Added To Cart: "+ cartStatus);
-                                        updateQuantity(product.prodId, 1);
+                                        saveItem();
+                                        //updateQuantity(product.prodId, 1);
                                     }
                                 }}
                                 >{ cartStatus ? "ADDED TO CART" : "ADD TO CART" }</button>
